@@ -43,9 +43,12 @@ export class DrawGridAxisNumbers {
         const HALF_WIDTH = this.grid.getSettings().getCanvas().getWidth() / 2;
         this.defaultNumberSettings(context);
         const POSITION_Y = -20;
+        const CLOSER_TO_AXIS_LEFT = -5;
+        const CLOSER_TO_AXIS_DOWN = 5;
         for (let x = -HALF_WIDTH; x <= HALF_WIDTH; x += LINE_SEPARATION) {
+            const MEASURE_VALUE = Math.floor(x / LINE_SEPARATION);
             if (x !== 0)
-                context.fillText(`${x / LINE_SEPARATION}`, x, POSITION_Y);
+                context.fillText(`${MEASURE_VALUE}`, x + CLOSER_TO_AXIS_LEFT, POSITION_Y + CLOSER_TO_AXIS_DOWN);
         }
         context.restore();
     }
@@ -58,9 +61,10 @@ export class DrawGridAxisNumbers {
         const HALF_HEIGHT = this.grid.getSettings().getCanvas().getHeight() / 2;
         this.defaultNumberSettings(context);
         const POSITION_X = -10;
+        const SEPARATE_FROM_AXIS = 7;
         for (let y = -HALF_HEIGHT; y <= HALF_HEIGHT; y += LINE_SEPARATION) {
             if (y !== 0)
-                context.fillText(`${-y / LINE_SEPARATION}`, POSITION_X, -y);
+                context.fillText(`${y / LINE_SEPARATION}`, POSITION_X, -y + SEPARATE_FROM_AXIS);
         }
         context.restore();
     }

@@ -1,3 +1,4 @@
+// THIS CLIENT IS JUST FOR ME
 import { Coordinates } from "./utils/coordinates.js";
 import { Canvas } from "./utils/canvas.js";
 import { Grid } from "./graph/grid.js";

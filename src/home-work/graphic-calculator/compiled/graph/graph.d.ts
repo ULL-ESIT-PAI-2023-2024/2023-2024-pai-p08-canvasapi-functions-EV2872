@@ -36,10 +36,10 @@ export declare class Graph {
     getGraphSettings(): GridNumericSettings;
     /**
      * @description draws the given function in the canvas used by the graph
-     * @param myFunction function to be draw
+     * @param mathFunction function to be draw
      * @param functionSettings has the parameters to draw the function
      */
-    drawFunction(myFunction: Function, functionSettings: FunctionSettings): void;
+    drawFunction(mathFunction: Function, functionSettings: FunctionSettings): void;
     /**
      * @description draws the grid using the line settings
      */

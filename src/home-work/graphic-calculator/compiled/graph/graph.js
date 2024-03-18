@@ -37,12 +37,12 @@ export class Graph {
     getGraphSettings() { return this.grid.getSettings(); }
     /**
      * @description draws the given function in the canvas used by the graph
-     * @param myFunction function to be draw
+     * @param mathFunction function to be draw
      * @param functionSettings has the parameters to draw the function
      */
-    drawFunction(myFunction, functionSettings) {
+    drawFunction(mathFunction, functionSettings) {
         const DRAW_FUNCTION = new DrawFunction(this.grid.getSettings().getCanvas());
-        DRAW_FUNCTION.drawObject(myFunction, functionSettings);
+        DRAW_FUNCTION.drawObject(mathFunction, functionSettings);
     }
     /**
      * @description draws the grid using the line settings
