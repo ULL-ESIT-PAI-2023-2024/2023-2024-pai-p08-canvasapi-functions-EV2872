@@ -8,7 +8,7 @@
     "module": "ES6",
     "allowJs": true,
     "rootDir": "./",
-    "outDir": "./",
+    "outDir": "./compiled",
     "declaration": true,
     "alwaysStrict": true,                     /* Parse in strict mode and emit "use strict" for each source file */
     "strict": true,                           /* Enable all strict type-checking options */
@@ -19,6 +19,7 @@
     "noUnusedLocals": true,                   /* Report errors on unused local variables */
     "forceConsistentCasingInFileNames": true  /* Force all file names to have the same case style */
   },
+  "include": ["./*.ts", "interfaces/area.ts", "interfaces/draw.ts", "figures/circle.ts", "figures/figure.ts", "figures/rectangle.ts", "figures/square.ts", "figures/triangle.ts", "utils/canvas.ts", "utils/coordinates.ts", "utils/view.ts"],
   "exclude": [
         "node_modules",
         "build",
