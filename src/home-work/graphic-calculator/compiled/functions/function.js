@@ -26,19 +26,9 @@ export class Function {
         let result = [];
         const SUPERIOR_LIMIT = range.getSuperiorLimit();
         for (let index = range.getInferiorLimit(); index < SUPERIOR_LIMIT; index += smoothRatio) {
-            if (!this.isPossibleDivisor(index)) { }
-            ;
             const COORDINATES = this.evaluateInAPoint(index, scale);
             result.push(COORDINATES);
         }
         return result;
-    }
-    /**
-     * @description used to avoid possible errors with division by 0
-     * @param divisor value to be checked
-     * @returns true if different of zero
-     */
-    isPossibleDivisor(divisor) {
-        return divisor !== 0;
     }
 }

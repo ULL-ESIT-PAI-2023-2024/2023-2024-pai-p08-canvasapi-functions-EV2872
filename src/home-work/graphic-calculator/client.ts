@@ -25,7 +25,7 @@ import { LineSettings } from './settings/lineSettings.js';
  */
 function main() {
   const CANVAS = new Canvas();
-  const LINE_SEPARATOR: number = 50;
+  const LINE_SEPARATOR: number = 60;
   const ORIGIN = new Coordinates(0, 0);
   const GRID_SETTINGS = new GridNumericSettings(ORIGIN, LINE_SEPARATOR, CANVAS);
   const GRID = new Grid(GRID_SETTINGS);
@@ -33,8 +33,10 @@ function main() {
   const LINE_SETTINGS = new LineSettings('Black', 1, DASH);
   const GRAPH = new Graph(GRID, LINE_SETTINGS);
   const VIEW = new View(GRAPH);
-  const FUNCTION_NAMW: string = prompt('Introudce the function name:') ?? '';
-  VIEW.visualizeFunction(FUNCTION_NAMW, LINE_SEPARATOR);
+  let functionName: string = prompt('Introudce the function name:') ?? '';
+  VIEW.visualizeFunction(functionName, LINE_SEPARATOR);
+  functionName = prompt('Introudce the function name:') ?? '';
+  VIEW.visualizeFunction(functionName, LINE_SEPARATOR);
 }
 
 main();

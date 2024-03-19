@@ -17,6 +17,8 @@ import { Pow } from './pow.js'
 import { Sine } from './sine.js'
 import { Sqrt } from './sqrt.js'
 import { Tan } from './tan.js'
+import { Factorial } from './factorial.js'
+import { SineTaylor } from './sine-taylor.js'
 
 /**
  * @description class that creates functions
@@ -38,6 +40,11 @@ export class FunctionManager {
         return new Sqrt();
       case 'tan':
         return new Tan();
+      case 'fac':
+        return new Factorial();
+      case 'taylor':
+        console.log('taylor');
+        return new SineTaylor(14);
       default:
         throw new Error('Function not supported');
     }

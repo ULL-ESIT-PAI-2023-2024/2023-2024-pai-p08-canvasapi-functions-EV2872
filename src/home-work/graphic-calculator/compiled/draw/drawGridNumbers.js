@@ -43,12 +43,13 @@ export class DrawGridAxisNumbers {
         const HALF_WIDTH = this.grid.getSettings().getCanvas().getWidth() / 2;
         this.defaultNumberSettings(context);
         const POSITION_Y = -20;
-        const CLOSER_TO_AXIS_LEFT = -5;
-        const CLOSER_TO_AXIS_DOWN = 5;
+        const SEPARATE_FROM_AXIS_Y = 35;
+        const SEPARATE_FROM_AXIS_X = -10;
         for (let x = -HALF_WIDTH; x <= HALF_WIDTH; x += LINE_SEPARATION) {
             const MEASURE_VALUE = Math.floor(x / LINE_SEPARATION);
-            if (x !== 0)
-                context.fillText(`${MEASURE_VALUE}`, x + CLOSER_TO_AXIS_LEFT, POSITION_Y + CLOSER_TO_AXIS_DOWN);
+            if (MEASURE_VALUE % 2 !== 0)
+                continue;
+            context.fillText(`${MEASURE_VALUE}`, x + SEPARATE_FROM_AXIS_X, POSITION_Y + SEPARATE_FROM_AXIS_Y);
         }
         context.restore();
     }
@@ -61,10 +62,16 @@ export class DrawGridAxisNumbers {
         const HALF_HEIGHT = this.grid.getSettings().getCanvas().getHeight() / 2;
         this.defaultNumberSettings(context);
         const POSITION_X = -10;
-        const SEPARATE_FROM_AXIS = 7;
+        const SEPARATE_FROM_AXIS_Y = 25;
+        const CLOSER_TO_AXIS_X = -5;
         for (let y = -HALF_HEIGHT; y <= HALF_HEIGHT; y += LINE_SEPARATION) {
+            const MEASURE_VALUE = Math.floor(y / LINE_SEPARATION);
+            if (MEASURE_VALUE % 2 !== 0)
+                continue;
+            if (MEASURE_VALUE === 0)
+                continue;
             if (y !== 0)
-                context.fillText(`${y / LINE_SEPARATION}`, POSITION_X, -y + SEPARATE_FROM_AXIS);
+                context.fillText(`${MEASURE_VALUE}`, POSITION_X + CLOSER_TO_AXIS_X, -y + SEPARATE_FROM_AXIS_Y);
         }
         context.restore();
     }

@@ -29,7 +29,7 @@ export class Canvas {
    * @returns the context if found
    */
   public getContext(): CanvasRenderingContext2D | null {
-    return this.canvas.getContext('2d')
+    return this.canvas.getContext('2d');
   }
 
   /**

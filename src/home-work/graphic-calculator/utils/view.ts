@@ -38,8 +38,8 @@ export class View {
     const COLOR: string = 'Black';
     const PIXEL_WITDH: number = 3;
     const GRAPH_SETTINGS: GridNumericSettings = this.graph.getGraphSettings();
-    const RANGE = new Range(-GRAPH_SETTINGS.getCanvas().getWidth(), 
-                          GRAPH_SETTINGS.getCanvas().getWidth());
+    const RANGE = new Range(-GRAPH_SETTINGS.getCanvas().getWidth() / 2, 
+                          GRAPH_SETTINGS.getCanvas().getWidth() / 2);
     const SMOOTH_RATIO: number = 0.01;
     const FUNCTION_SETTINGS = 
             new FunctionSettings(COLOR, PIXEL_WITDH, RANGE, scale, SMOOTH_RATIO);

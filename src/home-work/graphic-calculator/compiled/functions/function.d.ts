@@ -32,10 +32,4 @@ export declare abstract class Function {
      * @returns a vector with all the results
      */
     evaluateInRange(range: Range, scale: number, smoothRatio: number): Coordinates[];
-    /**
-     * @description used to avoid possible errors with division by 0
-     * @param divisor value to be checked
-     * @returns true if different of zero
-     */
-    private isPossibleDivisor;
 }

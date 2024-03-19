@@ -38,19 +38,9 @@ export abstract class Function {
     let result: Coordinates[] = [];
     const SUPERIOR_LIMIT: number = range.getSuperiorLimit();
     for (let index = range.getInferiorLimit(); index < SUPERIOR_LIMIT; index += smoothRatio) {
-      if (!this.isPossibleDivisor(index)) {};
       const COORDINATES: Coordinates = this.evaluateInAPoint(index, scale);
       result.push(COORDINATES);      
     }
     return result;
-  }
-
-  /**
-   * @description used to avoid possible errors with division by 0
-   * @param divisor value to be checked
-   * @returns true if different of zero
-   */
-  private isPossibleDivisor(divisor: number): boolean {
-    return divisor !== 0;
   }
 }

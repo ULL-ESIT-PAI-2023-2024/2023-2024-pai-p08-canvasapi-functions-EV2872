@@ -60,8 +60,8 @@ export class Grid {
      */
     getMiddleAxisX() {
         const CANVAS = this.gridSettings.getCanvas();
-        const LEFT_VERTEX = new Coordinates(-CANVAS.getWidth(), 0);
-        const RIGHT_VERTEX = new Coordinates(+CANVAS.getWidth(), 0);
+        const LEFT_VERTEX = new Coordinates(-CANVAS.getWidth() / 2, 0);
+        const RIGHT_VERTEX = new Coordinates(+CANVAS.getWidth() / 2, 0);
         return new Line(LEFT_VERTEX, RIGHT_VERTEX);
     }
     /**
@@ -70,8 +70,8 @@ export class Grid {
      */
     getMiddleAxisY() {
         const CANVAS = this.gridSettings.getCanvas();
-        const LEFT_VERTEX = new Coordinates(0, -CANVAS.getHeight());
-        const RIGHT_VERTEX = new Coordinates(0, +CANVAS.getHeight());
+        const LEFT_VERTEX = new Coordinates(0, -CANVAS.getHeight() / 2);
+        const RIGHT_VERTEX = new Coordinates(0, +CANVAS.getHeight() / 2);
         return new Line(LEFT_VERTEX, RIGHT_VERTEX);
     }
     /**
@@ -84,7 +84,8 @@ export class Grid {
         if (!context)
             throw new Error('Null Contex');
         context.save();
-        context.translate(CANVAS.getWidth() / 2, CANVAS.getHeight() / 2);
+        const PREVIOUS_ORIGIN = new Coordinates(CANVAS.getWidth() / 2, CANVAS.getHeight() / 2);
+        context.translate(PREVIOUS_ORIGIN.getPositionX(), PREVIOUS_ORIGIN.getPositionY());
         context.scale(1, -1);
     }
 }
